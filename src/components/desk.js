@@ -48,7 +48,7 @@ export default function Desk() {
 				justifyContent="start">
 				<Grid item xs={3}>
 					<img
-						style={{ width: "600px", marginTop: "10%" }}
+						style={{ height:"450px", marginTop: "10%" }}
 						src="/assets/desk.gif"
 						alt="desk"
 					/>
