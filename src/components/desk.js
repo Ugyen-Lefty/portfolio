@@ -35,6 +35,14 @@ export default function Desk() {
 			src: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
 			alt: "Javascript",
 		},
+		{
+			src: "https://upload.wikimedia.org/wikipedia/ru/a/a3/Unity_Logo.png",
+			alt: "Unity",
+		},
+		{
+			src: "https://btihen.me/post_ruby_rails/rails_6_1_tailwind_2_0_alpinejs/featured.png",
+			alt: "Tailwind",
+		},
 	];
 
 	return (
@@ -48,7 +56,7 @@ export default function Desk() {
 				justifyContent="start">
 				<Grid item xs={3}>
 					<img
-						style={{ height:"450px", marginTop: "10%" }}
+						style={{ height: "450px", marginTop: "10%" }}
 						src="/assets/desk.gif"
 						alt="desk"
 					/>

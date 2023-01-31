@@ -12,7 +12,7 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import "./navbar.css";
 
-const pages = ["About me", "Projects", "Blog", "Get in touch"];
+const pages = ["About me", "Projects", "Resume", "Get in touch"];
 
 export default function Navbar() {
 	const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -20,8 +20,10 @@ export default function Navbar() {
 	const [elevation, setElevation] = React.useState(0);
 
 	const navigateToView = (val) => {
-		const anchor = document.getElementById(`${val}`);
-		anchor.scrollIntoView({ behavior: "smooth", block: "center" });
+		if (document.getElementById(`${val}`)) {
+			const anchor = document.getElementById(`${val}`);
+			anchor.scrollIntoView({ behavior: "smooth", block: "center" });
+		}
 	};
 
 	const handleOpenNavMenu = (event) => {
@@ -30,6 +32,11 @@ export default function Navbar() {
 	const handleCloseNavMenu = (val) => {
 		navigateToView(val);
 		setAnchorElNav(null);
+		if (val === "Resume") {
+			window.open(
+				"https://drive.google.com/file/d/1LTtJQ_v3V8zfSIzsTNUxKAxmS6ZxBGdr/view"
+			);
+		}
 	};
 
 	const changeNavbarColor = () => {
@@ -109,21 +116,27 @@ export default function Navbar() {
 						{pages.map((page) => (
 							<Button
 								key={page}
-								onClick={() => handleCloseNavMenu(page.split(" ").join(""))}
+								onClick={() => {
+									handleCloseNavMenu(page.split(" ").join(""));
+								}}
 								sx={{
 									width: "25%",
 									pt: "1.5%",
 									pb: "1%",
-									color: "#fee528",
+									color: "#e6ff48",
 									display: "flex",
 									fontWeight: "bold",
 									fontSize: "15px",
 								}}
-								className="retro-font">
+								className="retro-font title-text">
 								{page}
 							</Button>
 						))}
-						<img className="w-28 h-10 my-auto" src="assets/heart.png" alt="hearts"/>
+						<img
+							className="w-28 h-10 my-auto"
+							src="assets/heart.png"
+							alt="hearts"
+						/>
 					</Box>
 				</Toolbar>
 			</Container>

@@ -16,3 +16,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.title-text {
+  text-shadow: 2px 2px 0 #a24b00;
+}
